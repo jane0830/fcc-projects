@@ -1,16 +1,13 @@
 /* General */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-html {
-  
-}
 
 ul {
-  list-style: none;
+  	list-style: none;
 }
 
 a {
@@ -18,7 +15,7 @@ a {
 	color: inherit;
 	cursor: pointer;
 	opacity: 0.9;
-  font: bold 30px 'Pacifico', cursive;
+	font: bold 30px 'Pacifico', cursive;
 }
 
 a:hover{
@@ -35,15 +32,15 @@ hr {
 }
 
 section {
-  display: flex;
+	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding: 125px 100px;  
 }
 
 h5 {
-  font: bold 32px 'Pacifico', cursive;
-  opacity: 0.5;
+	font: bold 32px 'Pacifico', cursive;
+	opacity: 0.5;
  
 }
 
@@ -79,7 +76,7 @@ section p{
 	line-height: 2;
 }
 
-ul.grid{
+ul.grid {
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
@@ -190,11 +187,11 @@ header h1{
 
 /* stormie section*/
 
-.stormie{
+.stormie {
 	background-color: #fff;
 }
 
-.stormie .grid li{
+.stormie .grid li {
 	padding: 20px;
 	height: 350px;
 	border-radius: 3px;
@@ -267,7 +264,7 @@ header h1{
 }
 
 /* footer*/
-footer{
+footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;

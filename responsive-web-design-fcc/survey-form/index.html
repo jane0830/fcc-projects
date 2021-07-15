@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Survey form</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">      
+        <link href="https://fonts.googleapis.com/css?family=Actor|Amaranth|Marmelad|Sintony" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="./assets/css/styles.css">       
+    </head>
+    <body>
+        <div class="header container-md">
+            <h1 id="title" class="text-black display-4">Survey Form</h1>                      
+        </div>
+        <div class="container-fluid survey-page">
+            <form class="container-fluid survey-form">
+               
+                    <div class="description p-3">
+                        <h5 id="description">Let us know how we can improve freeCodeCamp</h5>
+                    </div>
+                    <div class="row mb-3">
+                        <label id="name-label" class="col-sm-3 col-form-label col-form-label-sm">*Name</label>
+                        <div class="col-sm-8">
+                            <input class="form-control form-control-sm" id="name" type="name" name="Name" required pattern="[a-zA-Z]" placeholder="Enter your name"/>
+                        </div>                      
+                    </div>
+                    <div class="row mb-3">
+                        <label id="email-label" class="col-sm-3 col-form-label col-form-label-sm">*Email</label>
+                        <div class="col-sm-8">
+                            <input class="form-control form-control-sm" id="email" type="email" name="user-email" required pattern="[^@\s]+@[^@\s]+" placeholder="Enter you email"/>
+                        </div>                       
+                    </div>
+                    <div class="row mb-3">
+                        <label id="number-label" class="col-sm-3 col-form-label col-form-label-sm">*Age</label>
+                        <div class="col-sm-8">
+                            <input class="form-control form-control-sm" id="number" type="number" name="age" required min="" max="110" placeholder="Age"/><br>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label col-form-label-sm" id="dropdown-label">Which option best describes your current role?</label>
+                        <div class="col-sm-8">
+                            <select class="form-control form-control-sm" id="dropdown">
+                                <option value="att">Student</option>
+                                <option value="att">Full Time Job</option>
+                                <option value="att">Full Time Learner</option>
+                                <option value="att">Other</option>
+                            </select><br>
+                        </div>                  
+                    </div>
+                    <fieldset class="row mb-3">
+                        <label class="col-sm-3 col-form-label col-form-label-sm" id="dropdown-label" required>How likely is that you would recommend freeCodeCamp to a friend?</label>
+                        <div class="col-sm-8">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="likely-button" value="definitely" id="definitely">
+                                <label for="definitely" class="form-check-label">Definitely</label>                           
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="likely-button" value="maybe" id="maybe">
+                                <label for="maybe" class="form-check-label">Maybe</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="likely-button" value="not-sure" id="not-sure">
+                                <label for="not-sure" class="form-check-label">Not sure</label>
+                            </div>
+                        </div>                        
+                    </fieldset>
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label col-form-label-sm">What do you like most in FCC:</label>
+                        <div class="col-sm-8">
+                            <select class="form-control form-control-sm">
+                                <option value="" disable selected>Select an option</option>
+                                <option>Challenges</option>
+                                <option>Projects</option>
+                                <option>Community</option>
+                                <option>Open Source</option>
+                            </select>
+                        </div>
+                    </div>                   
+                    <fieldset class="row mb-3">
+                        <label class="col-sm-3 col-form-label col-form-label-sm">Things that should be improved in the future (Check all that apply):</label><br>
+                        <div class="col-sm-8">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="front-end-projects">Front-end Projects
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="back-end-projects">Back-end Projects
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="data-visual">Data Visualization
+                            </div>                          
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="challenges">Challenges                                
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="open-source-comm">Open Source Community
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="gitter-help">Gitter help rooms
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="videos">Videos
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="city-meetups">City Meetups                               
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="wiki">Wiki
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="forum">Forum
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="add-courses">Additional Courses
+                            </div>                                               
+                        </div>
+                    </fieldset>                    
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label col-form-label-sm">Any comments or suggestions?</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control form-control-sm" rows="3" cols="30" placeholder="Enter your comment here..."></textarea><br> 
+                        </div>                        
+                    </div>                    
+                    <div class="container-fluid btn-container">
+                        <button class="btn" id="submit" type="submit">Submit</button>
+                    </div>               
+            </form>
+        </div>       
+    </body>
+</html>

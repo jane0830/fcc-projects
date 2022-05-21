@@ -1,61 +1,75 @@
-/* General */
-* { 
-    margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-html {
-    font-size: 18px;
-    color: hsla(272, 77%, 6%, 0.8);       
-  }    
-
 body {
-   background-color:  rgb(255, 255, 255); 
-} 
-
-.header {     
-    padding: 2em 2em; 
-}   
-
-h1 {   
-    text-align: center;
-    font-family: 'Marmelad', sans-serif;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #324152;
+  font-family: Tahoma;
+  font-size: 16px;
+  color: white;
 }
 
-.survey-form {  
-    padding: 20px 40px;    
-    margin: 0 auto;   
-    font-family: 'Sintony', sans-serif;    
-    background-color: rgb(183, 170, 190);    
+h1, p {
+  margin: 1em auto;
+  text-align: center;
 }
 
-h5 {
-    text-align: center;
-    padding-bottom: 20px;
+form {
+  width: 60vw;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 2em;
+  
 }
 
-
-.btn-container {    
-    justify-content: center;
-    display: flex;
-  }
-
-@media (min-width: 1033px) {
-    .survey-form {
-        padding: 50px 40px;      
-        width: 900px;  
-    }
-    
-    .row {
-        padding-left: 20px;
-    }
-     
-  }
-
-@media (max-width: 280px) {
-    html {
-        font-size: 14px;;
-    }
+fieldset {
+  border: none;
+  padding: 2rem 0;
 }
 
+fieldset:not(:last-of-type) {
+  border-bottom: 3px solid #e6eaf0;  
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+ 
+input, 
+textarea, 
+select {
+  margin: 10px 0 0 0;
+  width: 100%;
+  min-height: 3em;
+}
+
+input, textarea, .dropdown {
+  background-color: #0a0a23;
+  border: 1px solid #0a0a23;
+  border-radius: 5px;
+  color: white;
+ 
+}
+
+.dropdown {
+   margin-bottom: 1em;
+}
+
+.inline {
+  width: unset;
+  margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 60%;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  background-color: #0a0a23;
+  border-color: #3e5a80;
+  min-width: 300px;
+}

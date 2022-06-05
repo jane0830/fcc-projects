@@ -12,9 +12,9 @@ body {
   font-size: 1.3rem;
 }
 
-h2 {
-  padding-bottom: 1em;
-  padding-top: 1em;  
+h2, .contact-p {
+  padding: 2em;
+    
 }
 
 /* navbar */
@@ -64,7 +64,7 @@ li {
   list-style: none;
 }
 
-input[type="checkbox"] {
+.navbar-toggle {
   display: none;
 }
 
@@ -111,7 +111,7 @@ input[type="checkbox"] {
   font-size: .8em;
 }
 
-.jumbotron #get_started {
+#get_started {
   background-color: #04ba10;
   padding: .4em;
   color: white;   
@@ -120,20 +120,7 @@ input[type="checkbox"] {
   font-size: 1em;
 }
 
-/* Who we are section */
-iframe {
-  padding-top: 6.8em;
-  border: none;
-  margin: 0 auto;
-  justify-items: center;
-  width: 350px;
-  height: 300px;   
-}
-
 /* grid */
-.header {
-  grid-area: header;
-}
 
 .content {
   grid-area: content;  
@@ -147,28 +134,42 @@ iframe {
   grid-area: sidebar;
 }
 
-section {
+
+.grid-section {
   display: grid;
   gap: 20px;
   text-align: justify;
   padding: 2em;
 }
 
-#who_we_are { 
-  grid-template-areas: "header  header ad"
-                       "content content ad";  
+#who_we_are .grid-section { 
+  grid-template-areas: "content ad"
+                       "content ad";  
 }
 
-#our_work {   
-  grid-template-areas: "header header"
+#our_work .grid-section {   
+  grid-template-areas: "sidebar content"
                        "sidebar content";
+}
+
+/* Who we are section */
+
+#who_we_are .grid-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;  
+  gap: 1rem;
+  place-items: center;   
+}
+
+iframe {
+  padding: 1em;
+  border: none;   
 }
 
 /* Our work */
 .image-wrapper {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: repeat(2, min-content);
+  grid-template-columns: 1fr 1fr;  
   gap: 1rem;
   place-items: center;  
 }
@@ -197,19 +198,19 @@ figcaption {
 }
 
 /* Services section */
-#services i {
-  font-size: 3em;
-  padding: 0 1em;
+.services-list { 
+  margin: auto;
+  width: 45%;
 }
 
-.services-wrapper { 
-  margin: 0 auto;
-  justify-content: center;
+.services-list li {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-bottom: 2rem;
 }
 
-.list-wrapper {
-  display: flex;  
-  padding: 2em 3em;
+.services-list i {
+  font-size: 2.8em;  
 }
 
 .fa-heart {
@@ -226,18 +227,53 @@ figcaption {
 
 /* Contact us section */
 
-#contact_us { 
-  padding: 2em;
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  place-items: center;
+}
+
+.contact-details {
+  grid-column: 2 / 3;
+  min-width: 350px;
+  line-height: 3.5em;  
+}
+
+.contact-details li * {
+  display: inline-flex;  
+}
+
+.contact-inputs label {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.contact-inputs {
+  grid-column: 3 / 4;
+ 
+}
+
+.contact-content input {
+  line-height: 2em;
+  border: none;   
+}
+
+.contact-content input, .contact-content textarea {
+  width: 13rem;
 }
 
 #form {
-   background-color: #daf7f7;
-   padding: 1.5em;   
-   justify-content: center; 
+  background-color: #daf7f7;
+  margin: 1.5em;
 }
 
 fieldset, textarea {
   border: none;  
+}
+
+.submit-container {  
+  text-align: center;
 }
 
 #submit {
@@ -246,41 +282,10 @@ fieldset, textarea {
   font: bold 1.2em 'Quicksand', sans-serif; 
   cursor: pointer;
   border-radius: 3px;
-  padding: 5px;
-  margin: 1em;
   color: white;
+  padding: 5px;
+  margin: 1em; 
 }
-
-#contact_us .fa {
-  padding-top: 15px;
-  padding-right: 20px;  
-}
-
-.contact-icon-wrapper {
-  display: flex;
-  padding-right: 2em;  
-  text-align: left;
-}
-
-.form-wrapper {
-  display: inline-flex; 
-  gap: 10px;
-  padding: 4em;
-  line-height: 3em;  
-}
-
- .wrapper {
-   text-align: left;
-   padding-left: 2em;
- }
-
- .info-wrapper input {
-   height: 2em;
- } 
-
-.info-wrapper input, textarea {   
-   border: none;      
- }
 
  /* Footer */
 
@@ -337,16 +342,15 @@ fieldset, textarea {
 
   .jumbotron input[type=email] {
     width: 15em;    
-  }
+  }  
 
-  #who_we_are {
+  #who_we_are .grid-section {
     grid-template-columns: 1fr;
-    grid-template-areas: "header"
-                         "content"
+    grid-template-areas: "content"
                          "ad";
   } 
 
-  #our_work {
+  #our_work .grid-section {
     grid-template-columns: 1fr;
     grid-template-areas: "header"
                          "content"
@@ -359,6 +363,14 @@ fieldset, textarea {
 
   .form-wrapper {
     display: inline-block;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-details, .contact-inputs {
+    grid-column: 1;
   }
  
 }

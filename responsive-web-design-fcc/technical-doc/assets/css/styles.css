@@ -1,77 +1,111 @@
-* {
-  box-sizing: border-box; 
-  margin-top: 0;    
+*, 
+::before, 
+::after {
+  box-sizing: border-box;   
+  padding: 0;
+  margin: 0;    
 }
 
 body {
+  display: grid; 
+  grid-template-columns: 1fr 2fr;
+  gap: 5px;
   line-height: 1.5;
-  font-family: 'Assistant', sans-serif; 
+  font-family: 'Assistant', sans-serif;  
 }
+
+main {   
+  padding: 2em 4em; 
+  text-align: justify; 
+}
+
+
+/* NAVBAR */
 
 .navbar {  
-  border-right: 5px solid black;  
-  position: fixed;
-  min-width: 300px;  
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
   top: 0px;
   left: 0px;
-  width: 300px; 
-  height: 600px;
-  display: block; 
+  width: 35%; 
+  height: 100vh;
+  display: block;
+  position: fixed;
+      
 }
 
-nav header {   
+.navbar header {   
   text-align: center;
+  font-size: 1.4rem;
   border-bottom: 1px solid #607673 ;
-  padding-top: 15px;
-  margin: 0;
-  background-color: rgb(240, 245, 244 );
-  font-size: 1.3em; 
+  padding: .5em; 
+  background-color: rgb(240, 245, 244 ); 
 }
 
-.navbar ul {
-  height: 67%;  
-  margin: 0;
-  padding: 0;
-  overflow-y: auto;   
-  overflow-x: hidden;
+.navbar ul {  
+  align-items: center; 
+  line-height: 1.9;
+  font-size: 19.2px;   
 }
 
-nav ul li {
+.navbar ul li {
   list-style: none;
-  border-bottom: 1px solid #0a0a23;
-  font-size: 20px;
-  padding: 3px 5px;
-  cursor: pointer;      
+  border-bottom: 1px solid #0a0a23;  
+  cursor: pointer;   
 }
 
-nav a {
+.navbar a {
   text-decoration: none;
+  color: black; 
+  padding-left: 1em;     
+}
+
+.navbar a:visited {
   color: black;
 }
 
-nav a:visited {
-  color: black;
+input[type="checkbox"] {
+  display: none;
+ }
+ 
+ .hamburger {
+  display: none;
+  font-size: 28px;
+  user-select: none;
+  padding-right: 1em; 
+ }
+
+/* MAIN DOCUMENTATION */
+
+.main-doc ul {
+  padding-left: 35px;
+  padding-top: 20px;      
+  
 }
 
-#main-doc a {
+.main-doc li {
+  padding-bottom: 20px;
+}
+
+.main-doc a {
   color: #4d8a76;
   text-decoration: none;
 }
 
-#main-doc a:hover {
+.main-doc a:hover {
   color: #8ab5a7;
 }
 
-#main-doc { 
-  margin-left: 310px;
-  padding: 20px;
-  margin-bottom: 110px;
-}
 
-#main-doc header {
+.main-doc header {
   font-size: 1.2em;
   font-weight: bold;
-  padding-bottom: 10px;  
+  padding: 20px 0;
+}
+
+.main-doc p {
+  padding-bottom: 20px;
+  padding-top: 20px
 }
 
 .code-container {   
@@ -81,17 +115,11 @@ nav a:visited {
 }
 
 
-input[type=checkbox]{
- display: none;
-}
-
-.hamburger {
- display: none;
- font-size: 28px;
- user-select: none; 
-}
-
 @media(max-width: 768px) { 
+
+  body {
+    grid-template-columns: 1fr;
+  }
 
   .menu { 
     display: none;
@@ -99,77 +127,71 @@ input[type=checkbox]{
     background-color: rgb(240, 245, 244 );
     right: 0;
     left: 0;
-    text-align: center;
-    padding: 5px 0;         
-  }
+    text-align: center;   
+    line-height: 2; 
+   }
 
   .navbar {    
     width: 100%;
-    height: 12%;
+    height: 13%;
+    position: fixed;
     justify-content: space-between;
-    display: flex;
+    display: inline-flex;    
     border-right: none;
     border-bottom: 1px solid black;
-    background-color: rgb(240, 245, 244);                   
+    background-color: rgb(240, 245, 244);
+    padding: 10px 5px;
+    align-items: center;                   
   }
 
-  nav header {
+  .navbar header {
     border: none;   
-    margin-left: 10px;
   }
 
-  nav ul li {
+  .navbar ul li {
     border-bottom: none;
-    font-size: 14px;        
-  }
-
- .navbar ul {
-    overflow-y: hidden;  
+    font-size: 16px;        
   } 
 
- .menu li:hover {
-    display: inline-block;
+  .menu li:hover {    
     background-color: #9fccbd;
     transition: 0.3s ease;
     width: 100%;    
     margin: 0;    
   }
 
- .menu li {  
+  .menu li {  
     margin: 0;
   }
 
- input[type=checkbox]:checked ~ .menu {
+  input[type="checkbox"]:checked ~ .menu {
    display: block;   
   }
  
- .hamburger {
-  display: block;
-  margin-right: 20px;
-  padding-top: 10px;  
- }
-  
- #main-doc {     
-   margin: 0;
-   padding-top: 80px;     
+  .hamburger {
+  display: block;  
+  }
+ 
+  .main-doc {
+   margin-top: 40px;
   }
 
-  @media(max-width: 360px) {
+}
 
-    .navbar {
-      padding: 0 2.3em;     
-    }
+@media(max-width: 360px) {
 
-    .navbar header {
-      font-size: 1.2em;
-      margin: 0;
-    }
-
-    .hamburger {
-      font-size: 1.5em;
-      margin: 0;     
-    } 
-
+  .navbar {
+    padding: 0 2.3em;     
   }
+
+  .navbar header {
+    font-size: 1.2em;
+    margin: 0;
+  }
+
+  .hamburger {
+    font-size: 1.5em;
+    margin: 0;     
+  } 
 
 }
